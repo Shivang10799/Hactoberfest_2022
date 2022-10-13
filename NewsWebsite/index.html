@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News App</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Pushster&display=swap');
+</style>
+
+<body onload="slider()">
+  <div class="app">
+    <div class="screen main-screen">
+      <div class="imgSlider screen ">
+        <div class="banner">
+          <div class="slider">
+            <img src="img/b4.jpg" id="slideImg">
+          </div>
+          <div class="overlay">
+            <div class="navbar">
+              <div class="logo menu-icons">
+                News Flash
+                <a href="https://github.com/aditi072"><i class="fa fa-github" style="font-size:36px;"></i></a>
+                <a href="https://www.linkedin.com/in/aditi-sharma-84323a1b3/"><i class="fa fa-linkedin" style="font-size:36px;"></i></a>
+                <a href="https://www.instagram.com/aditiisharma02/"><i class="fa fa-instagram" style="font-size:36px;"></i></a>
+              </div>
+            </div>
+
+            <div class="content">
+              <h1>Welcome to News Flash</h1>
+              <p style="font-size:30px;">A greater treasure to the people than uncounted millions of gold...</p>
+
+              <div>
+                <br>
+                <button type="button">Let's Start</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="categories"></div>
+      <div class="news-list"></div>
+    </div>
+    <div class="screen news-screen hidden">
+      <div class="header">
+        <div class="back-btn">&lt;</div>
+        <div class="title"></div>
+      </div>
+      <div class="news-frame">
+        <iframe id="news-frame"></iframe>
+      </div>
+    </div>
+    <script src="code.js"></script>
+  </div>
+  </div>
+
+  <script>
+    var slideImg = document.getElementById("slideImg");
+
+    var images = new Array(
+      "img/b4.jpg",
+      "img/b1.jpg",
+      "img/b2.jpeg",
+      "img/b3.jpg",
+    );
+    var len = images.length;
+    var i=0;
+
+    function slider(){
+        if(i > len-1){
+          i = 0;
+        }
+        slideImg.src = images[i];
+        i++;
+        setTimeout('slider()', 3000)
+    }
+
+  </script>
+</body>
+
+</html>
+style="background-image: url('{{url_for("static",filename='assets/img/home1.jpeg')}}')"
