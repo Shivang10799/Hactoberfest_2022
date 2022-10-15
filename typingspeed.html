@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .maindiv {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            background-color: #7cb9e2;
+        }
+
+        .centerdiv {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            font-family: 'Supermercado One', cursive;
+
+        }
+
+        #btn {
+            padding: 5px;
+            margin-top: 3px;
+            font-size: medium;
+            border-radius: 5;
+            background-color: rgb(163, 153, 153);
+        }
+
+        #mywords {
+            background-color: rgb(216, 216, 216);
+            padding: 5px;
+            box-shadow: 5px;
+            border: 3px double;
+        }
+
+        #fix {
+            color: brown;
+            margin-bottom: 10px;
+            text-decoration: underline;
+        }
+        
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Supermercado+One&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="maindiv">
+        <div class="centerdiv">
+            <h1 id="fix">
+                Welcome To My Speed Test App
+            </h1>
+            <h2 id="msg"></h2>
+            <br>
+            <textarea id="mywords" cols="100" rows="10" placeholder="Remember Be Nice!"></textarea>
+            <br>
+            <button id="btn" class="mainbtn"> Start</button>
+        </div>
+    </div>
+    <script>
+        const setofwords = [
+            "The magazine was founded in 1888 as a scholarly journal, nine months after the establishment of the society",
+            " In 1905, it began including pictures, a style for which it became well-known",
+            "Its first color photos appeared in the 1910s",
+            "During the Cold War, the magazine committed itself to presenting a balanced view of the physical and human geography of nations beyond the Iron Curtain",
+            "In later years, the magazine became outspoken on environmental issues. Since 2019, controlling interest has been held by The Walt Disney Company",
+        ];
+
+
+        const msg = document.getElementById('msg');
+        const typeWords = document.getElementById('mywords');
+        const btn = document.getElementById('btn');
+
+
+
+
+        const playgames = () => {
+            let randomNumber = Math.floor(Math.random() * setofwords.length);
+            msg.innerText = setofwords[randomNumber];
+            let date = new Date()
+            startTime = date.getTime();
+            btn.innerText = "Done";
+        }
+
+        const endplay = () => {
+            let date = new Date()
+            endTime = date.getTime();
+            let totalTime = ((endTime - startTime) / 1000);
+            console.log(totalTime);
+
+            let totalStr = typeWords.value;
+
+            let wordCount = wordCounter(totalStr);
+
+            let Speed = Math.round((wordCount / totalTime) * 60);
+
+            let finalMsg = " You Type Total At " + Speed + " words per minits ";
+
+            finalMsg += compareWords(msg.innerText, totalStr);
+            msg.innerText = finalMsg;
+        }
+
+        const compareWords = (str1, str2) => {
+            let words1 = str1.split(" ");
+            let words2 = str2.split(" ");
+            let cnt = 0;
+
+            words1.forEach(function (item, index) {
+                if (item == words2[index]) {
+                    cnt++;
+                }
+            })
+            let errorWords = (words1.length - cnt);
+            return (cnt + " corret out of " + words1.length + " words and the total number of errors are " + errorWords + ".");
+        }
+
+
+        const wordCounter = (str) => {
+            let response = str.split(" ").length;
+            console.log(response);
+            return (response);
+        }
+
+        let startTime, endTime;
+        btn.addEventListener('click', function () {
+            console.log(this);
+            if (this.innerText == 'Start') {
+                typeWords.disabled = false;
+                playgames();
+            } else if (this.innerText == "Done") {
+                typeWords.disabled = true;
+                btn.innerText = "Start";
+                endplay();
+            }
+
+        })
+
+    </script>
+</body>
+
+</html>
