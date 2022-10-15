@@ -1,0 +1,91 @@
+.bo{
+  text-align: center;
+  position: relative;
+}
+h1{
+  font-size:10rem;
+  font-family: 'Corinthia', cursive;
+  font-weight: bolder;
+}
+.img{
+  margin-top: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 600px;
+  opacity: 0.6;
+  /*width: 600px;*/
+  position: absolute;
+  margin-left: auto;
+margin-right: auto;
+left: 0;
+right: 0;
+text-align: center;
+}
+/*.lfs{
+  padding-top: 200px;
+height: 500px;
+position: absolute;
+}*/
+.dr{
+  height: 100px;
+}
+.p1{
+  position: relative;
+}
+button{
+ border-width: 0.5rem;
+ text-align: center;
+ height: 9rem;
+ width: 9rem;
+ font-size: 4rem;
+ margin: 0 1%;
+ color:#AA14F0;
+}
+.drum{
+  padding-bottom: 2%;
+  padding-bottom: 4%;
+}
+.btnw{
+background-image:url("image/1.jfif");
+font-family: 'Ubuntu', sans-serif;
+}
+.btna{
+    background-image:url("image/2.jfif");
+    font-family: 'Ubuntu', sans-serif;
+}
+.btns{
+    background-image:url("image/3.png");
+    font-family: 'Ubuntu', sans-serif;
+}
+.btnd{
+    background-image:url("image/4.jfif");
+    font-family: 'Ubuntu', sans-serif;
+}
+.btnj{
+    background-image:url("image/5.png");
+    font-family: 'Ubuntu', sans-serif;
+}
+.btnk{
+    background-image:url("image/6.jfif");
+    font-family: 'Ubuntu', sans-serif;
+}
+.btnl{
+    background-image:url("image/7.jfif");
+    font-family: 'Ubuntu', sans-serif;
+}
+.shadow{
+  box-shadow: 0 3px 4px 0 #DBEDF3;
+  opacity: 0.5;
+}
+.foot{
+/*padding-top: 200px;*/
+font-family: 'Ubuntu', sans-serif;
+padding-top: 40px;
+ width: 100%;
+ font-size: 20px;
+}
+.foot1{
+  text-align: center;
+  position: relative;
+}
