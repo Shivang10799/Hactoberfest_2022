@@ -1,38 +1,80 @@
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Calculator</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <section>
-      <div class="container">
-        <div id="display"></div>
-        <div class="buttons">
-          <div class="button">C</div>
-          <div class="button">/</div>
-          <div class="button">*</div>
-          <div class="button">&larr;</div>
-          <div class="button">7</div>
-          <div class="button">8</div>
-          <div class="button">9</div>
-          <div class="button">-</div>
-          <div class="button">4</div>
-          <div class="button">5</div>
-          <div class="button">6</div>
-          <div class="button">+</div>
-          <div class="button">1</div>
-          <div class="button">2</div>
-          <div class="button">3</div>
-          <div class="button">.</div>
-          <div class="button">(</div>
-          <div class="button">0</div>
-          <div class="button">)</div>
-          <div id="equal" class="button">=</div>
-        </div>
-      </div>
-    </section>
-    <script src="index.js"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIMPLE CALCULATOR</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>SIMPLE CALCULATOR</h1>
+    <div id="box">
+        <input type="text" placeholder="0" id="result">
+        <table>
+            <tr>
+                <td colspan="2">
+                    <button id="AC" type="button" style="width: 166px;" onclick="restart()">AC</button>
+                    
+                </td>
+                <td>
+                    <button type="button" id="%" type="button" onclick="operation()" >%</button>
+                    
+                </td>
+                <td>
+                    <button type="button" id="back" onclick="backButton()">Back</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="1" class="number" type="button" onclick="displayNumber()">1</button></td>
+                    <td><button id="2" class="number" type="button" onclick="displayNumber()">2</button></td>
+                    <td><button id="3" class="number" type="button" onclick="displayNumber()">3</button></td>
+                    <td>
+                        <button type="button" id="+" onclick="operation()">+</button>
+                    </td>
+                    
+            </tr>
+            <tr>
+                <td>
+                    <button id="4" class="number" type="button" onclick="displayNumber()">4</button></td>
+                    <td><button id="5" class="number" type="button" onclick="displayNumber()">5</button></td>
+                    <td><button id="6" class="number" type="button" onclick="displayNumber()">6</button></td>
+                    <td>
+                        <button type="button" id="-" onclick="operation()">-</button>
+                    </td>
+                    
+            </tr>
+
+            <tr>
+                <td>
+                    <button id="7" class="number" type="button" onclick="displayNumber()">7</button></td>
+                    <td><button id="8" class="number" type="button" onclick="displayNumber()">8</button></td>
+                    <td><button id="9" class="number" type="button" onclick="displayNumber()">9</button></td>
+                    <td>
+                        <button type="button" id="*" onclick="operation()">*</button>
+                    </td>
+                    
+            </tr>
+
+            <tr>
+                <td>
+                    <button id="." class="number" type="button" onclick="displayNumber()">.</button></td>
+                    <td><button id="0" class="number" type="button" onclick="displayNumber()">0</button></td>
+                        <td><button type="button" id="/" onclick="operation()">/</button></td>
+                    </td>
+                    <td>
+                        <button type="button" id="=" onclick="Result()">=</button>
+                    </td>
+                    
+            </tr>
+        </table>
+    </div>
+
+    <!--ADD EXTERNAL JAVASCRIPT FILE HERE-->
+
+    <script src="script.js"></script>
+    
+</body>
 </html>
